@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package grpctest;
+
+service Math{
+  rpc Sum (MathReq) returns (MathResp) {}
+}
+
+message MathReq {
+  int32 N1 =1;
+  int32 N2 =2;
+}
+
+message MathResp {
+  int32 Sum =1;
+}
