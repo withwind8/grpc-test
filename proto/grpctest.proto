@@ -4,6 +4,7 @@ package grpctest;
 
 service Math{
   rpc Sum (MathReq) returns (MathResp) {}
+  rpc Jian (MathReq) returns (MathResp) {}
 }
 
 message MathReq {

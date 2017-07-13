@@ -19,6 +19,11 @@ func (s *server) Sum(ctx context.Context, in *grpctest.MathReq) (*grpctest.MathR
 	return &grpctest.MathResp{Sum: in.N1 + in.N2}, nil
 }
 
+func (s *server) Jian(ctx context.Context, in *grpctest.MathReq) (*grpctest.MathResp, error) {
+	log.Printf("RPC call: %d - %d ", in.N1, in.N2)
+	return &grpctest.MathResp{Sum: in.N1 - in.N2}, nil
+}
+
 func main() {
 	lis, err := net.Listen("tcp", ":50001")
 	if err != nil {

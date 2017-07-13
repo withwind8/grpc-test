@@ -27,7 +27,7 @@ func main() {
 		n2, _ = strconv.Atoi(os.Args[2])
 	}
 
-	r, err := c.Sum(context.Background(), &grpctest.MathReq{int32(n1), int32(n2)})
+	r, err := c.Jian(context.Background(), &grpctest.MathReq{int32(n1), int32(n2)})
 	if err != nil {
 		log.Fatalf("rpc fail: %v", err)
 	}
